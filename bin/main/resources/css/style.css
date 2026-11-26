@@ -1,0 +1,90 @@
+/* ===== Tema Siqlo: putih bersih + aksen merah ===== */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -siqlo-merah: #d7000f;
+    -siqlo-merah-gelap: #a8000c;
+    -fx-accent: -siqlo-merah;
+    -fx-focus-color: -siqlo-merah;
+    -fx-faint-focus-color: #d7000f22;
+}
+
+/* ---------- header & logo ---------- */
+.header {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #e5e5e5 transparent;
+}
+.logo-sq {
+    -fx-background-color: -siqlo-merah;
+    -fx-background-radius: 6;
+    -fx-min-width: 46; -fx-min-height: 46;
+    -fx-max-width: 46; -fx-max-height: 46;
+}
+.logo-sq-teks {
+    -fx-text-fill: white;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+}
+.brand {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -siqlo-merah;
+}
+.brand-sub { -fx-text-fill: #666666; -fx-font-size: 12px; }
+.status-db {
+    -fx-padding: 4 10;
+    -fx-background-radius: 12;
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #555555;
+}
+.status-ok { -fx-background-color: #e6f4ea; -fx-text-fill: #1e7b34; }
+.status-gagal { -fx-background-color: #fdecea; -fx-text-fill: #b3261e; }
+
+/* ---------- halaman & kartu ---------- */
+.page { -fx-background-color: #f4f4f4; }
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #e3e3e3;
+    -fx-border-radius: 8;
+    -fx-padding: 14;
+}
+.section-title { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #222222; }
+.hint { -fx-text-fill: #777777; -fx-font-size: 12px; }
+.teks-merah { -fx-text-fill: #b3261e; }
+
+/* ---------- ringkasan total ---------- */
+.ringkasan { -fx-padding: 6 0 0 0; }
+.total-label { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #111111; }
+
+/* ---------- tombol ---------- */
+.button { -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand; }
+.button.primary {
+    -fx-background-color: -siqlo-merah;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 9 16;
+}
+.button.primary:hover { -fx-background-color: -siqlo-merah-gelap; }
+.button.secondary { -fx-background-color: #222222; -fx-text-fill: white; }
+.button.secondary:hover { -fx-background-color: #000000; }
+.button.danger { -fx-text-fill: #b3261e; }
+
+/* ---------- tabel ---------- */
+.table-view { -fx-background-radius: 6; }
+.table-view .column-header .label { -fx-font-weight: bold; }
+.table-row-cell:selected { -fx-background-color: -siqlo-merah; }
+.table-row-cell:selected .text { -fx-fill: white; }
+
+/* ---------- tab ---------- */
+.tab-pane > .tab-header-area { -fx-padding: 6 10 0 10; }
+.tab { -fx-padding: 4 16; }
+.tab:selected .tab-label { -fx-text-fill: -siqlo-merah; -fx-font-weight: bold; }
+
+/* ---------- tampilan struk (monospace, seperti kertas struk) ---------- */
+.struk-text {
+    -fx-font-family: "Monospaced";
+    -fx-font-size: 12.5px;
+}
+.struk-text .content { -fx-background-color: #fffef8; }
+.struk-window { -fx-background-color: #f4f4f4; }

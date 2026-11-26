@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.java.controller.MainWindowController">
+
+    <top>
+        <VBox>
+            <MenuBar>
+                <menus>
+                    <Menu mnemonicParsing="false" text="File">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleOpenKasir" text="Kasir" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleOpenBarang" text="Katalog Barang" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleOpenRiwayat" text="Riwayat Struk" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleOpenPembayaran" text="Pembayaran" />
+                            <SeparatorMenuItem />
+                            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Keluar" />
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Bantuan">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleTentang" text="Tentang Aplikasi" />
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+
+            <!-- HEADER: logo Siqlo "SQ" (pengganti LogoKotak versi Swing, sekarang murni di View/FXML) -->
+            <HBox styleClass="header" alignment="CENTER_LEFT" spacing="14">
+                <padding><Insets top="12" right="18" bottom="12" left="18" /></padding>
+                <StackPane styleClass="logo-sq">
+                    <Label styleClass="logo-sq-teks" text="SQ" />
+                </StackPane>
+                <VBox spacing="2">
+                    <Label styleClass="brand" text="SIQLO" />
+                    <Label styleClass="brand-sub" text="Siqlo PIK Avenue  ·  Toko &lt;1510&gt;" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblStatusDb" styleClass="status-db" text="Memeriksa database..." />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="tabKasir" text="Kasir">
+                    <content>
+                        <fx:include fx:id="kasirView" source="kasir.fxml" />
+                    </content>
+                </Tab>
+                <Tab fx:id="tabBarang" text="Katalog Barang">
+                    <content>
+                        <fx:include fx:id="barangView" source="barang_table.fxml" />
+                    </content>
+                </Tab>
+                <Tab fx:id="tabRiwayat" text="Riwayat Struk">
+                    <content>
+                        <fx:include fx:id="riwayatView" source="riwayat_struk.fxml" />
+                    </content>
+                </Tab>
+                <Tab fx:id="tabPembayaran" text="Pembayaran">
+                    <content>
+                        <fx:include fx:id="pembayaranView" source="pembayaran_table.fxml" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

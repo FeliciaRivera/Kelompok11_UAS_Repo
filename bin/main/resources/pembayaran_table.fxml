@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- layout untuk keluarga class Pembayaran (Pembayaran, PembayaranTunai, PembayaranNonTunai) -->
+<HBox spacing="14" styleClass="page" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.java.controller.PembayaranTableController">
+    <padding><Insets top="14" right="14" bottom="14" left="14" /></padding>
+
+    <VBox spacing="10" styleClass="card" HBox.hgrow="ALWAYS">
+        <Label styleClass="section-title" text="Daftar Pembayaran (tabel pembayaran + tunai / non tunai)" />
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="Metode" />
+            <ComboBox fx:id="cmbFilter" onAction="#handleFilter" prefWidth="150" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblRingkasan" styleClass="hint" text="" />
+        </HBox>
+        <TableView fx:id="tblPembayaran" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50" text="ID" />
+                <TableColumn fx:id="colTanggal" prefWidth="95" text="Tanggal" />
+                <TableColumn fx:id="colMetode" prefWidth="90" text="Metode" />
+                <TableColumn fx:id="colJumlah" prefWidth="115" text="Jumlah Bayar" />
+                <TableColumn fx:id="colUangDiterima" prefWidth="115" text="Uang Diterima" />
+                <TableColumn fx:id="colKembalian" prefWidth="100" text="Kembalian" />
+                <TableColumn fx:id="colJenisKartu" prefWidth="100" text="Jenis Kartu" />
+                <TableColumn fx:id="colNomorKartu" prefWidth="140" text="No. Kartu" />
+            </columns>
+            <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+        </TableView>
+    </VBox>
+</HBox>
